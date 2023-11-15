@@ -1,0 +1,92 @@
+
+:root {
+  --primary-color: rgb(177, 166, 166);
+  --font-family: "Poppins", sans-serif;
+  --font-size-xsm: 1.2rem;
+  --font-size-sm: 1.6rem;
+  --font-size-md: 2.2rem;
+  --font-size-lg: 3rem;
+  --font-size-xl: 5rem;
+  --gap: 3rem;
+}
+
+.select-form {
+  padding: 5rem;
+  border-radius: 1rem solid black;
+}
+.menu-post a {
+  color: black;
+}
+
+#form-language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: var(--gap);
+  flex-wrap: wrap;
+}
+
+select {
+  border-radius: 1.5rem;
+  padding: 1rem 3rem;
+  border: none;
+}
+
+option {
+  font-size: var(--font-size-md);
+}
+
+input {
+  border-radius: 1.5rem;
+}
+
+.submit-form,
+.language-form {
+  padding: 1rem 3rem;
+  /* display: block; */
+  border: 1px solid black;
+  background-color: #f0f0f0;
+}
+
+.container-blog {
+  width: 70%;
+  padding: 9rem;
+  margin: 50px auto;
+  text-align: left;
+  border: 1px solid black;
+  border-radius: 2rem;
+  box-shadow: 0 0 20px grey;
+  background-color: white;
+  font-size: 2rem;
+}
+
+@media (max-width: 1000px) {
+  .container-blog {
+    width: 80%;
+  }
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.language-section,
+.blog-content {
+  margin: 20px 0;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background-color: #2980b9;
+}

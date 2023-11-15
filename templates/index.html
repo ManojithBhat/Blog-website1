@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <script src="{{url_for('static',filename='/js/script.js')}}" defer></script>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/post.css')}}">
+    <title>Blog-Website</title>
+</head>
+
+<body>
+    <!-- header section -->
+    <header>
+        <nav class="nav-bar">
+            <div class="logo place-item-centre">
+                <i class="fa-solid fa-pen-nib fa-2x"></i>
+                <div class="logo-text">Blog-Website</div>
+            </div>
+
+            <div class="menu place-item-centre" id="menu">
+                <ul class="list place-item-centre">
+                    <li class="menu-li"><a href="{{url_for('index')}}">Home</a></li>
+                    <li class="menu-li"><a href="#form">Create</a></li>
+                </ul>
+            </div>
+
+            <button class="place-item-centre menu-toggle-icon">
+                <i class="fa-solid fa-bars open-menu-icon menu-icon"></i>
+                <i class="fa-solid fa-x close-menu-icon menu-icon"></i>
+            </button>
+
+        </nav>
+        <div class="header-content">
+            <p class="text-header-content">Blog for everyone</p>
+            <p class="header-content-caption">read . write . explore</p>
+        </div>
+    </header>
+
+
+
+    <!-- Flash messages section -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class="flash-messages">
+        {% for message in messages %}
+        <li class="flash-message">
+            <span class="close-btn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+
+    <!-- show all the bog  -->
+    <div class="row">
+        {% for post in posts %}
+        <div class="card">
+            <div class="text-card">
+                <h5 class="language">{{ post.language }}</h5>
+                <p class="heading-text-card">{{ post.heading }}</p>
+
+                <p class="intro">{{ post.body.split('\n').0 | safe }}</p>
+
+                <button class="btn"><a href="{{url_for('post',id= post.id)}}">Read the article</a></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- form to recieve heading,author,content and language -->
+    <div class="box-container">
+        <div class="container-post" id="form">
+            <h2>Create a New Post</h2>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                <label class="label" for="heading">Heading:</label>
+                {{ form.title(class="form-control") }}
+
+                <label for="author">Author:</label>
+                {{ form.author(class="form-control") }}
+
+                <label for="language">Language:</label>
+                {{ form.language(class="form-control") }}
+
+                <label for="content">Content:</label>
+                {{ form.content(class="form-control content-form") }}
+
+                <button type="submit" class="btn-form">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/7a6dfac7ff.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
