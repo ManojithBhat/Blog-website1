@@ -12,9 +12,9 @@ Flask-WTF
 googletrans==4.0.0rc1
 greenlet
 gunicorn
-h11==0.9.0
-h2==3.2.0
-hpack==3.0.0
+h11
+h2
+hpack
 hstspreload
 httpcore
 httpx
