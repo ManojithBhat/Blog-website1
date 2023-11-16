@@ -24,7 +24,6 @@ itsdangerous
 Jinja2
 MarkupSafe
 mysql-connector-python
-mysql-connector-python-rf
 mysqlclient
 packaging
 protobuf
