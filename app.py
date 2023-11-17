@@ -10,6 +10,9 @@ import os
 app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv("DATABASE_PASS")
+#for sqllite = sqlite:///database_name.db
+#see docs of SQLALCHEMY for mysql and Postgres
+
 app.config['SECRET_KEY'] = os.getenv("PASSWORD")
 
 db = SQLAlchemy(app)
