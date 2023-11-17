@@ -61,8 +61,8 @@ pip freeze > requirements.txt
 
 ### Open the .env file and set the values for:
 
--SQLALCHEMY_DATABASE_URI
--SECRET_KEY
+- SQLALCHEMY_DATABASE_URI
+- SECRET_KEY
 
 ## Initialize the Database in CLI:
 ### make required changes in the app.py file for app.config\['SQLALCHEMY_DATABASE_URI'] for mysql,sqlite or Postgres sql.
