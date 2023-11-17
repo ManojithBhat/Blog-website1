@@ -12,7 +12,7 @@
 
 ## Overview
 
-Brief description of your project.
+Flask Blog website 
 
 ## Getting Started
 
